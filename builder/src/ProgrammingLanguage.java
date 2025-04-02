@@ -11,9 +11,11 @@ public class ProgrammingLanguage {
     private LanguageType languageType;
     private LocalDate launchDate;
 
-    //Is necessary define a private constructor to obligate create a new object using 'Builder'
-    //The constructor have an object type ProgrammingLanguageBuilder (An inner class defined more down) }
-    // with all parameters of this class encapsulated
+    /**
+     * Is necessary define a private constructor to obligate create a new object using 'Builder'
+     * The constructor have an object type ProgrammingLanguageBuilder (An inner class defined more down)
+        with all parameters of the principal class encapsulated
+     * */
     private ProgrammingLanguage(ProgrammingLanguageBuilder builder) {
         this.name = builder.name;
         this.nameCreator = builder.nameCreator;
@@ -61,14 +63,17 @@ public class ProgrammingLanguage {
                 ", nameCreator='" + nameCreator + '\'' +
                 ", languageType=" + languageType +
                 ", launchDate=" + launchDate +
-                '}';    public static class grammingLanguageBuilder {
+                '}';
 
     }
 
-    //Inner class to apply builder pattern, this class have methods to initialize each attribute
-    //All the attributes of this inner class are the same of the principal class and for each attribute
-    // is necessary define a method to initialize the variable, finally return an object of this inner class
-    //(necessary to allow call chaining)
+
+    /**
+     * Inner class to apply builder pattern
+     * All the attributes of this inner class are the same of the principal class and for each attribute
+     * is necessary define a method to initialize the variable, finally return an object of this inner class
+     * (necessary to allow call chaining)
+     */
     public static class ProgrammingLanguageBuilder {
         private String name;
         private String nameCreator;
@@ -95,6 +100,9 @@ public class ProgrammingLanguage {
             return this;
         }
 
+        /**
+         * Build method to return and object of the principal class 'ProgrammingLanguage'
+         * */
         ProgrammingLanguage build() {
             return new ProgrammingLanguage(this);
         }
