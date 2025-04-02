@@ -1,6 +1,9 @@
 import java.util.List;
 
 /**
+ * The prototype pattern allows creates new object of any class cloning an existing object
+ * To avoid using 'new' when the creation of the object is complex and costly
+ *
  * @author Daniel Mora Cantillo
  */
 public class Main {
@@ -23,19 +26,19 @@ public class Main {
                         .build()
         );
 
-        PriceList priceList = new PriceList.Builder()
+        Invoice invoice = new Invoice.Builder()
                 .setName("Normal list")
                 .setProductList(productList)
                 .build();
 
         //Print initial list
-        System.out.println(priceList.toString());
+        System.out.println(invoice.toString());
 
         //Print second object PriceList
-        System.out.println( new PriceList.Builder()
+        System.out.println( new Invoice.Builder()
                 .setName("Preferential list")
                 .setProductList(productList)
                 .build());
-        System.out.println(priceList.deepClone().toString());
+        System.out.println(invoice.deepClone().toString());
     }
 }
