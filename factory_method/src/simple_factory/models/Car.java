@@ -1,13 +1,13 @@
-package factory_method.models;
+package simple_factory.models;
 
-
-import factory_method.factory.Vehicle;
+import simple_factory.Vehicle;
 
 /**
  * This class represents the specific product.
- * An Entity class to implement the interface Vehicle because a Car is a vehicle
+ * Class model to implements the Interface Vehicle to categorized it
  *
- * @author Daniel Mora Cantillo*/
+ * @author Daniel Mora Cantillo
+ * */
 public class Car implements Vehicle {
     @Override
     public void start() {
